@@ -49,7 +49,7 @@ module OAuth
       end
 
       def test_request
-        render :text => params.collect{|k,v|"#{k}=#{v}"}.join("&")
+        render :text => params.to_hash.collect{|k,v|"#{k}=#{v}"}.join("&")
       end
 
       def authorize
